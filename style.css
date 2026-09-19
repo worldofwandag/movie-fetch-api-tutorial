@@ -38,7 +38,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   border-radius: 0 0 20% 20%;
-  transition: --nav-angle 1s ease, all 1s ease;
+  transition: --nav-angle 300ms ease, all 1s ease;
 }
 
 /* Shimmer sweep on nav while the search input is hovered */
@@ -74,7 +74,6 @@ nav:has(.search-form__input:hover) {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 8px; */
 }
 .logo__img {
   width: 34px;
