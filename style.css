@@ -17,16 +17,18 @@ body {
   background-position: center;
 }
 
+/* this property will allow us to control the angle of the gradient of the navbar */
 @property --nav-angle {
-  syntax: "<angle>";
-  inherits: false;
+  syntax: "<angle>"; /* declares that valid values for this prop must be a css angle (e.g 135deg, 2rad)*/
+  inherits: false; /* decendants don't inherit this value. */
   initial-value: 135deg;
 }
 
+
 nav {
-  --nav-angle: 135deg;
   background-image: linear-gradient(
     var(--nav-angle),
+    /* 135deg, */ /* use 135deg instead of the var(--nav-angle) if you don't plan on navShimmer anim */
     rgba(0, 0, 0, 0.8),
     rgba(78, 78, 78, 0.7)
   );
@@ -42,6 +44,8 @@ nav {
 }
 
 /* Shimmer sweep on nav while the search input is hovered */
+/* this is needed to add the nav animation below */
+
 nav:has(.search-form__input:hover) {
   --nav-angle: 184deg;
   background-image: linear-gradient(
@@ -69,6 +73,10 @@ nav:has(.search-form__input:hover) {
     background-position: 250% 0;
   }
 }
+
+/* this is needed to add the nav animation above */
+
+
 
 .logo {
   display: flex;
