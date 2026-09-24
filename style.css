@@ -198,7 +198,7 @@ main {
 }
 
 .movie-card__img:hover {
-  box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .movie-card__title {
@@ -231,7 +231,7 @@ main {
 }
 
 .movie-card__poster-placeholder:hover {
-  box-shadow: 8px 8px 24px rgb(0, 0, 0, 0.5);
+  box-shadow: 1px 8px 24px rgb(0, 0, 0, 0.5);
 }
 
 /* Skeleton Loading */

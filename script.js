@@ -6,10 +6,9 @@ const moviesGrid = document.querySelector('#moviesGrid');
 const resultsInfo = document.querySelector('#resultsInfo');
 const sortSelect = document.querySelector('#sortSelect');
 
-
 let currentMovies = [];
 
-// Event Listeners
+// Event Listener
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const searchTerm = searchInput.value.trim();
@@ -17,7 +16,6 @@ searchForm.addEventListener('submit', (e) => {
     fetchMovies(searchTerm);
   }
 });
-
 
 
 // Show skeleton loading cards
@@ -37,8 +35,8 @@ function showSkeletons() {
 async function fetchMovies(searchTerm) {
   showSkeletons();
 
-  const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTerm}`);
-  const data = await response.json();
+  const res = await fetch(`https://www.omdbapi.com/?apikey=e11ddac9&s=${searchTerm}`);
+  const data = await res.json();
 
   if (data.Response === 'True') {
     currentMovies = data.Search;
@@ -54,7 +52,7 @@ async function fetchMovies(searchTerm) {
 
 // Display movies
 function displayMovies(movies) {
-  const movieResults = movies.map(function(movie) {
+  const movieResults = movies.map((movie) => {
     const poster = movie.Poster !== 'N/A' ? movie.Poster : '';
 
     return `
