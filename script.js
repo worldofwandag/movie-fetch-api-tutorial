@@ -8,6 +8,8 @@ const sortSelect = document.querySelector('#sortSelect');
 
 let currentMovies = [];
 
+
+
 // Event Listener
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -35,7 +37,7 @@ function showSkeletons() {
 async function fetchMovies(searchTerm) {
   showSkeletons();
 
-  const res = await fetch(`https://www.omdbapi.com/?apikey=e11ddac9&s=${searchTerm}`);
+  const res = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTerm}`);
   const data = await res.json();
 
   if (data.Response === 'True') {
